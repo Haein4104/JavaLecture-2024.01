@@ -33,5 +33,5 @@ public class Ex01_Variable {
 		}
 		System.out.println(num);		//변수가 유효하지 않음
 	}
-
+	
 }
