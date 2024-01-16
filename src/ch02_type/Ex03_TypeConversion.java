@@ -27,10 +27,11 @@ public class Ex03_TypeConversion {
 		System.out.println("(int) i: " + (int) i);
 		
 		// 연산에서의 자동 타입변환
-		long k = a + b + c; 	// short + int + long
-		double l = d + e;		// float + double
-		double m = a / b;		// int / int ==> double
+		long k = a + b + c; // short + int + long
+		double l = d + e;	// float + double
+		double m = a / b;	// int / int
 		System.out.println("k: " + k + ", l: " + l + ", m " + m);
+		
 	}
 
 }
