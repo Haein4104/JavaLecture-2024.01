@@ -14,6 +14,7 @@ public class Ex04_Input {
 		System.out.print("입력하세요>");
 		String inputText = scan.nextLine();			// Enter를 칠때까지의 문자열을 읽음
 		System.out.println(inputText);
+		scan.close();
 
 	}
 
