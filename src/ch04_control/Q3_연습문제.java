@@ -11,7 +11,6 @@ public class Q3_연습문제 {
 			}
 			System.out.println(i);
 		}
-
 	}
 
 }

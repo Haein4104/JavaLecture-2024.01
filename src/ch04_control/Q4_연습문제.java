@@ -16,11 +16,8 @@ public class Q4_연습문제 {
 		System.out.println(num);
 		num -= 2;
 		System.out.println("마지막 계산" + num);
-	
-			
-		}
 		
-
+		}
 	}
 // break; = 연산을 끝내겠다
 // continue; = 연산을 계속하겠다
