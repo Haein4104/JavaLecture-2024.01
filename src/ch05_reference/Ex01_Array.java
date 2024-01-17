@@ -2,7 +2,7 @@ package ch05_reference;
 
 import java.util.Arrays;
 
-public class Ex_Array {
+public class Ex01_Array {
 
 	public static void main(String[] args) {
 		// 배열을 생성하며 값을 지정하는 경우
@@ -23,6 +23,7 @@ public class Ex_Array {
 		for (int i = 0; i < newArray.length; i++)
 			newArray[i] = 1 + (int) (Math.random() * 6);
 		System.out.println(Arrays.toString(newArray));
+		System.out.println(Arrays.toString(score));
 	}
 
 }
