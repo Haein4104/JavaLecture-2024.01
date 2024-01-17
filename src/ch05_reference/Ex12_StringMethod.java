@@ -25,6 +25,8 @@ public class Ex12_StringMethod {
 		// 찾고자 하는 문자열이 대상 문자열에 있는지 확인
 		if (str2.toLowerCase().indexOf("Java") >= 0)
 			System.out.println("문장 안에 java라는 글자가 있습니다.");
+		
+		
 
 		// 문자열 변환
 		boolean a = true;
