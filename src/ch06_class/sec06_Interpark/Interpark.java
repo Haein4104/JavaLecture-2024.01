@@ -8,8 +8,6 @@ public class Interpark {
 	public String company;
 	public String price;
 	
-	
-
 	public Interpark(int rank, String title, String author, String translator, String company, String price) {
 
 		this.rank = rank;
@@ -19,14 +17,11 @@ public class Interpark {
 		this.company = company;
 		this.price = price;
 	}
-
-
-
+	
 	@Override
 	public String toString() {
 		return "Interpark Best Seller rank " + rank + ": " + title + "(" + author + "/" + translator
 				+ "/" + company + ") ▶ " + price + "￦";
 	}
 		
-
 }
