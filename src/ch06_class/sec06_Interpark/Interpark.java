@@ -25,7 +25,7 @@ public class Interpark {
 	@Override
 	public String toString() {
 		return "Interpark Best Seller rank " + rank + ": " + title + "(" + author + "/" + translator
-				+ "/" + company + ") ▶" + price + "￦";
+				+ "/" + company + ") ▶ " + price + "￦";
 	}
 		
 
