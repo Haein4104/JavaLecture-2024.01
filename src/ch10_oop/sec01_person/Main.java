@@ -1,6 +1,6 @@
 package ch10_oop.sec01_person;
 
-public class Main {
+public class Main { 
 
 	public static void main(String[] args) {
 		// Person 객체

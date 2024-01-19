@@ -16,3 +16,4 @@ public class Person {
 		System.out.println(name + " 님이 꿀잠중입니다.");
 	}
 }
+ 

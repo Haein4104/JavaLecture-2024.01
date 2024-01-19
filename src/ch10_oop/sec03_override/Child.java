@@ -14,3 +14,4 @@ public class Child extends Parent {
 		super.parentMethod();
 	}
 }
+ 

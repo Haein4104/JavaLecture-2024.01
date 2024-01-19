@@ -16,5 +16,5 @@ public class Main {
 //		Parent p = new Child();
 //		Child c = (Child) new Parent(); // 강제 타입 변환
 	}
-
+ 
 }

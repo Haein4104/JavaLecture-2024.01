@@ -7,3 +7,4 @@ public class Worker extends Person {
 		System.out.println(name + " 님이 회식에 초대되었습니다.");
 	}
 }
+ 
