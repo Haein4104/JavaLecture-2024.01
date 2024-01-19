@@ -7,6 +7,9 @@ public class Melon {
 	public String album;
 	public String like;
 	
+	
+	public Melon() {} // 기본 생성자, 다른 생성자가 있으면 반드시 만들어 줄 것.
+
 	public Melon(int rank, String title, String name, String album, String like) {
 		this.rank = rank;
 		this.title = title;

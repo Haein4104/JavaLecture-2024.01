@@ -8,6 +8,15 @@ public class Interpark {
 	public String company;
 	public String price;
 	
+	public Interpark(int rank, String title, String author, String company, String price) {
+
+		this.rank = rank;
+		this.title = title;
+		this.author = author;
+		this.company = company;
+		this.price = price;
+	}
+	
 	public Interpark(int rank, String title, String author, String translator, String company, String price) {
 
 		this.rank = rank;
@@ -20,8 +29,8 @@ public class Interpark {
 	
 	@Override
 	public String toString() {
-		return "Interpark Best Seller rank " + rank + ": " + title + "(" + author + "/" + translator
-				+ "/" + company + ") ▶ " + price + "￦";
+		return "Interpark Best Seller rank " + rank + ": " + title + "(" + author + 
+				((translator ==null) ? "" : "/ " + translator) + "/" + company + ") ▶ " + price + "￦";
 	}
 		
 }
