@@ -5,11 +5,10 @@ public class Sample {
 	public static final int STATIC_FIELD = 1234;
 	
 	void instanceMethod() {
-		System.err.println("instance method");
+		System.out.println("instance method");
 	}
 	
 	static void staticMethod() {
 		System.out.println("static method");
 	}
-
 }
