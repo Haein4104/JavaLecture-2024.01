@@ -2,7 +2,7 @@ package ch17_collection.part1_list.sec03_Message;
 
 import java.util.List;
 
-public class MessageSeviceListImpl implements MessageService {
+public class MessageServiceListImpl implements MessageService {
 
 	@Override
 	public Message findByMid(int mid) {
