@@ -8,7 +8,7 @@ public class Ex02_ArrayList {
 
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>(); // 대부분 이와 같이 사용
-		ArrayList<String> aList = new ArrayList<>(); // 이렇게는 잘 사용하지 않음
+//		ArrayList<String> aList = new ArrayList<>(); // 이렇게는 잘 사용하지 않음
 
 		list.add("class");
 		list.add("interface");
