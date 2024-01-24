@@ -3,7 +3,7 @@ package ch10_oop.sec01_person;
 public class Main { 
 
 	public static void main(String[] args) {
-		// Person 객체
+		// Person 객체 
 		Person person = new Person();
 		person.name = "james"; person.age = 27;
 		person.eat(); person.sleep();

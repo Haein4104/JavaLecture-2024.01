@@ -3,7 +3,7 @@ package ch10_oop.sec02_constructor;
 public class Main {
 
 	public static void main(String[] args) {
-		// Person 객체
+		// Person 객체 
 		Person person = new Person("james", 27);
 		person.eat(); person.sleep();
 		

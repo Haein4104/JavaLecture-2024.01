@@ -1,7 +1,7 @@
 package ch10_oop.sec05_equals;
 
 import java.util.Objects;
-
+ 
 public class Customer {
 	private int cid;
 	private String name;
