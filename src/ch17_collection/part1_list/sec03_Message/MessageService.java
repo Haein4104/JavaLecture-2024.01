@@ -10,11 +10,12 @@ public interface MessageService {
 	List<Message> getMessageListAll();
 	
 	List<Message> getMessageListByWriter(String writer);
+	// writer 별 메세지 목록
 	
-	void insertMessage(Message message);
+	void insertMessage(Message message);		// 메세지 입력
 	
-	void updateMessage(Message message);
-	
-	void deleteMessage(int mid);
+	void updateMessage(Message message);		// 메세지 추가
+		
+	void deleteMessage(int mid);				// 메세지 삭제
 
 }
