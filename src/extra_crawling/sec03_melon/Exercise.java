@@ -21,7 +21,7 @@ public class Exercise {
 		System.out.println(trs.size());
 		
 		List<MelonChart> chart = new ArrayList<>();
-		for (Element tr: trs) {
+		for (Element tr: trs) { // 왜 for문을 돌렸나? 100개를 다 할 수 없자나....
 		String rank_ = tr.selectFirst(".rank").text().strip();
 		int rank = Integer.parseInt(rank_);
 		String title = tr.selectFirst(".ellipsis.rank01 > span > a").text().strip();
