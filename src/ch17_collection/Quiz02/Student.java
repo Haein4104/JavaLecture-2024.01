@@ -10,27 +10,31 @@ import java.util.Objects;
 public class Student {
 	public int studentNum;
 	public String name;
-	
-	public Student(int studentNum, String name) {
+
+	public Student(int studentNum, String name) { // 생성자(constructor) 만들기
 		this.studentNum = studentNum;
 		this.name = name;
 	}
 
+	// hashCode() & equals() 메소드 추가
 	@Override
 	public int hashCode() {
-		return Objects.hash(name, studentNum);
+//		return studentNum;
+		return Objects.hash(studentNum);
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Student other = (Student) obj;
-		return Objects.equals(name, other.name) && studentNum == other.studentNum;
-		
+		if (obj instanceof Student) {
+			Student st = (Student) obj;
+			return this.studentNum == st.studentNum;
+		}
+		return false;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [studentNum=" + studentNum + ", name=" + name + "]";
+	}
+
 }
