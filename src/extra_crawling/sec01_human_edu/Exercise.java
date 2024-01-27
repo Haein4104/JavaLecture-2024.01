@@ -67,9 +67,9 @@ public class Exercise {
 				String title = li.selectFirst(".txt_wrap > h2").text().strip();
 				String desc = li.selectFirst(".txt_content").text().strip();
 				System.out.println(title);
-//				System.out.println(desc);
+				System.out.println(desc);
 			}
-			System.out.println("============================================");
+//			System.out.println("============================================");
 		}
 	}
 
