@@ -13,7 +13,7 @@ import org.json.simple.parser.JSONParser;
 public class RoadAddrApi {
 
 	public String getRoadAddr(String keyword) throws Exception {
-		BufferedReader br = new BufferedReader(new FileReader("c:/Temp/roadApikey.txt")); // 한글자씩 읽게 하자
+		BufferedReader br = new BufferedReader(new FileReader("c:/Temp/roadApiKey.txt")); // 한글자씩 읽게 하자
 		String confmKey = br.readLine();
 		br.close();
 		int currentPage = 1, countPerPage = 5;
@@ -38,18 +38,18 @@ public class RoadAddrApi {
     		sb.append(tempStr);								// 응답결과 JSON 저장
     	}
     	br.close();
-//		
-//    	// JSON 데이터에서 원하는 값 추출하기
-//    	JSONParser parser = new JSONParser();
-//		JSONObject object = (JSONObject) parser.parse(sb.toString());
-//		JSONObject results = (JSONObject) object.get("results");
-//		JSONArray juso = (JSONArray) results.get("juso");
-//		JSONObject jusoItem = (JSONObject) juso.get(0);
-//		String roadAddr = (String) jusoItem.get("roadAddr"); 		// jusoItem에서 키값 불러오기
-//		
-////		System.out.println(jusoItem.keySet());
-//		
-		return sb.toString();
+		
+    	// JSON 데이터에서 원하는 값 추출하기
+    	JSONParser parser = new JSONParser();
+		JSONObject object = (JSONObject) parser.parse(sb.toString());
+		JSONObject results = (JSONObject) object.get("results");
+		JSONArray juso = (JSONArray) results.get("juso");
+		JSONObject jusoItem = (JSONObject) juso.get(0);
+		String roadAddr = (String) jusoItem.get("roadAddr"); 		// jusoItem에서 키값 불러오기
+		
+//		System.out.println(jusoItem.keySet());
+		
+		return roadAddr;
 		
 	}
 	
