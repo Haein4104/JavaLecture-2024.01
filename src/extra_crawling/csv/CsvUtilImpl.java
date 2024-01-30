@@ -1,7 +1,11 @@
 package extra_crawling.csv;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CsvUtilImpl implements CsvUtil {
@@ -23,7 +27,35 @@ public class CsvUtilImpl implements CsvUtil {
 
 	@Override
 	public List<List<String>> readCsv(String filename, String separator, int skipLine) {
-		return null;
+		List<List<String>> csvList = new ArrayList<List<String>>();
+		BufferedReader br = null;
+		int lineNo = 0;
+		try {
+			br = new BufferedReader(new FileReader(filename));
+			while (true) {
+				String line = br.readLine();
+				if (line == null)
+					break;
+				if (skipLine > lineNo++)
+					continue;
+				String[] lineArray = line.split(separator);
+				csvList.add(Arrays.asList(lineArray)); 	// 이 한 줄이 아래 네 줄과 같은 의미임
+//				List<String> lineList = new ArrayList<String>();
+//				for (String word: lineArray)
+//					lineList.add(word);
+//				csvList.add(lineList);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return csvList;
 	}
 
 	@Override
