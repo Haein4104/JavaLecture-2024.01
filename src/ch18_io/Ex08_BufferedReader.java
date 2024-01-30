@@ -7,7 +7,7 @@ public class Ex08_BufferedReader {
 
 	public static void main(String[] args) throws Exception {
 		// 줄 단위로 읽을 수 있음
-		BufferedReader br = new BufferedReader(new FileReader("c:/Temp/README.txt"));	// reader는 추상클래스의 조상격이라 이렇게 쓸수있음
+		BufferedReader br = new BufferedReader(new FileReader("c:/Temp/README.txt"));
 		
 		int lineNo = 1;
 		while (true) {
@@ -19,4 +19,5 @@ public class Ex08_BufferedReader {
 		}
 		br.close();
 	}
+
 }
