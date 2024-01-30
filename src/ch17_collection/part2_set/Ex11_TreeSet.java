@@ -12,7 +12,7 @@ public class Ex11_TreeSet {	// TreeSet 객체를 순서대로 정리해줌
 		
 		Set<String> strSet = new TreeSet<String>();
 		strSet.add("G"); strSet.add("B"); strSet.add("D"); strSet.add("H"); strSet.add("F");
-		System.out.println(strSet);
+		System.out.println(strSet); 
 
 
 	}

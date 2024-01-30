@@ -11,7 +11,7 @@ public class Ex01_HashSet {
 		// 저장
 		set.add("Java"); set.add("collection"); set.add("set");
 		set.add("set");					// 중복된 내용을 입력해도 저장은 안됨. 중복저장 X
-		System.out.println(set);
+		System.out.println(set); 
 		
 		// 삭제
 		set.remove("Set");
