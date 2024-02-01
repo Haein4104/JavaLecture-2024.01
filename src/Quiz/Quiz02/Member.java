@@ -9,7 +9,7 @@ public class Member {			// 속성 (모두 비공개)
 	private String tel;			// 전화번호 : 문자열
 	
 	public Member() {}			// 기본 생성자
-								//	모든 속성값을 매개변수로 받아서 객체의 속성값을 설정하는 생성자
+	//	모든 속성값을 매개변수로 받아서 객체의 속성값을 설정하는 생성자
 	public Member(int mid, String name, int birthYear, String tel) {
 		this.mid = mid;
 		this.name = name;
@@ -31,14 +31,6 @@ public class Member {			// 속성 (모두 비공개)
 		this.name = name;
 	}
 	public int getBirthYear() {
-		LocalDate today = LocalDate.now();
-		int year = today.getYear();
-		int month = today.getMonthValue();
-		int day = today.getDayOfMonth();
-		int age = (month > birthday.getMonthValue()
-				|| (month == birthday.getMonthValue() && day > birthday.getMonthValue()))
-						? year - birthday.getYear() - 1
-						: year - birthday.getYear();
 		return birthYear;
 	}
 	public void setBirthYear(int birthYear) {
@@ -50,6 +42,10 @@ public class Member {			// 속성 (모두 비공개)
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+	public int getAge() {
+		LocalDate today = LocalDate.now();
+		return today.getYear() - birthYear;
+	}
 	
 //	Member를 출력하면 다음과 같이 나오게 해주는 메소드 (단, 나이는 금년 – 출생년)
 //  ID: mid, 이름: name, 나이:ㅇㅇ, 전화번호: ㅇㅇㅇ-ㅇㅇㅇㅇ-ㅇㅇㅇㅇ
@@ -60,10 +56,5 @@ public class Member {			// 속성 (모두 비공개)
 				", 나이: " + (LocalDate.now().getYear() - birthYear) + 
 				", 전화번호: " + tel;
 	}
-	
-	
-	
-	
-	
 
 }

@@ -39,7 +39,7 @@ public class MemberArrayListMain {
 	}
 	
 	public static List<Member> getMemberList() {
-		List<Member> members = new ArrayList<Member>();
+		List<Member> members = new ArrayList<Member>();		// 구현할 객체 ArrayList를 new함
 		members.add(new Member(1, "james", 1985, "010-1234-5678"));
 		members.add(new Member(2, "maria", 1989, "010-9876-5432"));
 		
@@ -50,7 +50,7 @@ public class MemberArrayListMain {
 			else m.setTel("010-1111-2222");
 		}
 		
-		return members;
+		return members;			// return 타입 members 를 반환
 	}
 
 }
