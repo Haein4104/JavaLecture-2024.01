@@ -33,3 +33,37 @@ CREATE TABLE users
 	isDeleted int DEFAULT 0,
 	PRIMARY KEY (uid)
 );
+
+-- 2. 테이블 조회
+# DB 내의 테이블 목록
+SHOW TABLES;
+
+# 테이블 구조
+DESC users;                     -- describe
+
+
+-- 3. 테이블 삭제
+# largeCity view 삭제
+DROP VIEW largeCity;            -- DROP VIEW
+
+# dateTable 삭제
+DROP TABLE dateTable;           -- DROP TABLE
+
+# kcity 내의 데이터 삭제
+TRUNCATE kcity;                 -- TRANCATE ; 데이터 구조는 남지만 데이터를 전부 날릴 위험이 있어 추천하지 않음
+
+# 테이블 이름 변경
+RENAME TABLE kcity TO korCity;
+
+
+-- 5. 테이블 구조 변경
+
+# users 테이블에서 email 뒤에 tel 추가
+ALTER TABLE users
+    ADD tel VARCHAR(16) NOT NULL AFTER email;
+DESC users;
+
+# users 테이블에서 tel의 not null 제거
+ALTER TABLE users
+    CHANGE tel tel VARCHAR(16);
+DESC users;
