@@ -4,7 +4,7 @@
 #
 #####################################################
 
-SHOW DATABASE
+SHOW DATABASES;
 USE world;
 SHOW world;
 DESC city;
@@ -177,7 +177,7 @@ WHERE l.Population > 8000000;
 
 # 양쪽 테이블에서 필드명이 고유한 필드는 테이블 이름 생략 가능함 (Continent)
 SELECT Continent, r.Name countryName, l.Name cityName, l.Population FROM city l
-	INNER JOIN country r
+	INNER JOIN country r                    -- INNER JOIN : A와 B라는 데이터의 교집합이 되는 부분
 	ON l.countrycode=r.Code
 	WHERE l.Population > 8000000;
 
@@ -207,3 +207,16 @@ JOIN countrylanguage o ON l.CountryCode=o.CountryCode
 WHERE l.Continent='Asia' AND r.IsOfficial='T'
 ORDER BY l.Population DESC
 LIMIT 10;
+
+
+
+-- 1.8 Sub Query
+
+# 국내 도시만으로 새로운 테이블을 만드는 경우
+CREATE TABLE if NOT EXISTS kcity LIKE city;
+DESC city;
+SELECT * FROM kcity;
+INSERT INTO kcity                                   -- kcity로 넣어라
+    SELECT * FROM city WHERE countrycode='KOR';     -- 한국의 도시로부터 (데이터를) 선택하여
+
+
