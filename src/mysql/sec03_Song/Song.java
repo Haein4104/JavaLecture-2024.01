@@ -1,57 +1,42 @@
 package mysql.sec03_Song;
 
 public class Song {
-
 	private int sid;
-	private String name;
 	private String title;
-	private String debut;
+	private String lyrics;
 	
-	public Song() {}
-
-	public Song(int sid, String name, String title, String debut) {
-		this.sid = sid;
-		this.name = name;
+	public Song() { }
+	public Song(String title, String lyrics) {
 		this.title = title;
-		this.debut = debut;
+		this.lyrics = lyrics;
 	}
-
+	public Song(int sid, String title, String lyrics) {
+		this.sid = sid;
+		this.title = title;
+		this.lyrics = lyrics;
+	}
+	
 	@Override
 	public String toString() {
-		return "Song [sid=" + sid + ", name=" + name + ", title=" + title + ", debut=" + debut + "]";
+		return "Song [sid=" + sid + ", title=" + title + ", lyrics=" + lyrics + "]";
 	}
-
+	
 	public int getSid() {
 		return sid;
 	}
-
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public String getDebut() {
-		return debut;
+	public String getLyrics() {
+		return lyrics;
 	}
-
-	public void setDebut(String debut) {
-		this.debut = debut;
+	public void setLyrics(String lyrics) {
+		this.lyrics = lyrics;
 	}
-	
-	
 }
