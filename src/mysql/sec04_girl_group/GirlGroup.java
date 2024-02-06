@@ -26,12 +26,11 @@ public class GirlGroup {
 		this.debut = debut;
 		this.hitSongId = hitSongId;
 	}
-	// 일반 생성자
-	public GirlGroup(int gid, String name, LocalDate debut, int hitSongId, String hitSongTitle) {
+	// List 할 경우 사용되는 생성자
+	public GirlGroup(int gid, String name, LocalDate debut, String hitSongTitle) {
 		this.gid = gid;
 		this.name = name;
 		this.debut = debut;
-		this.hitSongId = hitSongId;
 		this.hitSongTitle = hitSongTitle;
 	}
 
@@ -79,6 +78,11 @@ public class GirlGroup {
 
 	public void setHitSongTitle(String hitSongTitle) {
 		this.hitSongTitle = hitSongTitle;
+	}
+
+	public void updateGirlGroup(GirlGroup gg) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

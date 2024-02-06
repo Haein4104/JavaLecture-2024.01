@@ -36,7 +36,7 @@ INSERT INTO song (title, lylics) values
    ('짧은치마', '짧은 치마를 입고 내가 길을 걸으면'),
    ('위아래', '위 아래 위위 아래'), ('Dumb Dumb', '너 땜에 하루종일')
    ('TOP', 'My love D.O.C 너도 힘들겠어'), ('Perfect Man', '그대만을 알겠어 내 숨이 다한대도 cause u r the ONE'),
-   ('누난 너무 예뻐', '누난 너무 예뻐서 남자들이 가만 안 둬'),
+   ('Attention', 'You and me 내 맘이 보이지? 한참을 쳐다봐, 가까이 다가가 you see (ey-yeah)'),
    ('HOT ISSUE', '머리부터 발 끝까지 Hot issue');
 SELECT * FROM song;
 
@@ -49,10 +49,10 @@ INSERT INTO girl_group (name, debut, hit_song_id) values
    ('2NE1', '2009-07-08', 106), ('f(x)', '2011-04-20', 108),
    ('시크릿', '2011-01-06', 109), ('레인보우', '2010-08-12', 110),
    ('애프터 스쿨', '2009-11-25',120), ('포미닛', '2009-08-28', 121);
-   SELECT * FROM girl_group_songs;
+   SELECT * FROM girl_group;
 
 
-
+121
 
 -- 3. TABLE JOIN
 # INNER JOIN

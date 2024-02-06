@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class GirlGroupDao {
@@ -63,14 +65,13 @@ public class GirlGroupDao {
 	}
 
 	public GirlGroup getGirlGroupByName(String name) {
-		String sql = "SELECT l.gid, l.name, l.debut, r.title FROM girl_group l"
-					+ "	JOIN song r ON l.hit_song_id=r.sid"
-					+ "	WHERE l.name LIKE ?";
+		String sql = "SELECT l.gid, l.name, l.debut, r.title FROM girl_group l" + "	JOIN song r ON l.hit_song_id=r.sid"
+				+ "	WHERE l.name LIKE ?";
 		GirlGroup gg = new GirlGroup();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + name + "%");
-			
+
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				gg.setGid(rs.getInt(1));
@@ -78,12 +79,90 @@ public class GirlGroupDao {
 				gg.setDebut(LocalDate.parse(rs.getString(3)));
 				gg.setHitSongTitle(rs.getString(4));
 			}
-			rs.close(); pstmt.close();
+			rs.close();
+			pstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return gg;
 	}
+
+	public List<GirlGroup> getGirlGroupByDebut(int fromYear, int toYear) {
+		String sql = "SELECT l.gid, l.name, l.debut, r.title FROM girl_group l"
+				+ "	JOIN song r ON l.hit_song_id=r.sid"
+				+ "	WHERE debut BETWEEN ? AND ?";
+		
+		List<GirlGroup> list = new ArrayList<GirlGroup>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, fromYear + "-01-01");
+			pstmt.setString(2, toYear + "-12-31");
+			
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				GirlGroup gg = new GirlGroup(rs.getInt(1), rs.getString(2), LocalDate.parse(rs.getString(3)), rs.getString(4));
+				list.add(gg);
+			}
+			rs.close(); pstmt.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
-	
+	public void insertGirlGroup(GirlGroup gg) {
+		String sql = "insert into girl_group values(default, ?, ?, ?)";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, gg.getName());
+			pstmt.setString(2, gg.getDebut().toString()); // getDebut를 toString으로 바꿈
+			pstmt.setInt(3, gg.getHitSongId());
+			
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}		
+		public void updateGirlGroup(GirlGroup gg) {
+			String sql = "update girl_group set name=?, debut=?, hit_song_id=?, where gid=?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, gg.getName());
+				pstmt.setString(2, gg.getDebut().toString()); // getDebut를 toString으로 바꿈
+				pstmt.setInt(3, gg.getHitSongId());				
+				pstmt.setInt(4, gg.getGid());
+				
+				pstmt.executeUpdate();
+				pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
+	}
+
+	public void deleteGirlGroup(int gid) {
+		String sql = "delete from girl_group where gid=?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, gid);
+			
+			// SQL 실행
+			pstmt.executeUpdate();
+			
+			pstmt.close(); conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }
+
+
+
+
+
+
+
+
