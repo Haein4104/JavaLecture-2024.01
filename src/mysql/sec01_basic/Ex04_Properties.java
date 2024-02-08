@@ -2,7 +2,6 @@ package mysql.sec01_basic;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.sql.DriverManager;
 import java.util.Properties;
 
 public class Ex04_Properties {
@@ -22,8 +21,6 @@ public class Ex04_Properties {
 		String host = prop.getProperty("host");
 		String port = prop.getProperty("port");
 		String database = prop.getProperty("database");
-		String user = prop.getProperty("user");
-		String password = prop.getProperty("password");
 		
 		String connStr = "jdbc:mysql://" + host + ":" + port + "/" + database;
 		System.out.println(connStr);

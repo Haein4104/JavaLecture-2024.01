@@ -1,5 +1,5 @@
 // Student 중복 저장 방지
-package ch17_collection.Quiz02;
+package ch17_collection.qna.q8_set;
 
 import java.util.HashSet;
 import java.util.Set;

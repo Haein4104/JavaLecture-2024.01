@@ -1,5 +1,5 @@
 // 게시물 클래스
-package ch17_collection.Quiz01;
+package ch17_collection.qna.q7_list;
 
 public class Board {
 	private String title;

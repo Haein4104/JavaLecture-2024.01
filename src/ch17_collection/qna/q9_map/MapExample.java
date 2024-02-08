@@ -2,7 +2,7 @@
  * HashMap에 아이디(String)와 점수(Integer)가 저장돼있다.
  * 실행결과와 같이 평균 점수를 출력하고 최고 점수와 최고점수를 받은 아이디를 출력하라.
 */
-package ch17_collection.Quiz03;
+package ch17_collection.qna.q9_map;
 
 import java.util.HashMap;
 import java.util.Map;

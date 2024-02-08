@@ -3,7 +3,7 @@
  * 중복 저장되지 않도록 하고 싶다. Student 클래스에서 재정의해야하는 HashCode()와
  * equals() 메소드의 내용을 채워보세요. Student의 해시코드는 학번이라고 가정합니다.
 */
-package ch17_collection.Quiz02;
+package ch17_collection.qna.q8_set;
 
 import java.util.Objects;
 
